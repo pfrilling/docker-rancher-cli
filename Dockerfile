@@ -14,6 +14,7 @@ RUN apk update && \
 	apk add --quiet --no-cache ca-certificates && \
 	apk add --quiet --no-cache --virtual build-dependencies curl && \
 	apk add --quiet --no-cache docker && \
+  apk add --quiet --no-cache expect && \
 	curl -sSL "https://github.com/rancher/cli/releases/download/${RANCHER_CLI_VERSION}/rancher-linux-amd64-${RANCHER_CLI_VERSION}.tar.gz" | tar -xz -C /usr/local/bin/ --strip-components=2 && \
 	chmod +x /usr/local/bin/rancher && \
 	apk del build-dependencies && \
